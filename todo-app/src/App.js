@@ -3,19 +3,22 @@ import "./App.css";
 
 function App() {
   const [todoList, setTodoList] = useState("");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
   return (
     <div className="App">
       <header className="App-header">
         <h2>Todo list</h2>
       </header>
-      <form>
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="Enter a todo"
           onChange={(e) => setTodoList(e.target.value)}
           value={todoList}
         />
-        <button>ADD</button>
+        <button type="submit">ADD</button>
       </form>
     </div>
   );
