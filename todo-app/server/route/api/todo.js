@@ -2,13 +2,22 @@ const express = require("express");
 const Todo = require("../../model/todo");
 const router = express.Router();
 
-router.get("/api/todo", (req, res) => {
-  res.send("Hello World");
-});
-router.post("/api/todo", (req, res) => {
-  const newTodo = new Todo({
-    todo: req.body.todo,
+const todoListApi = (app) => {
+  app.get("/api/todo", async (req, res) => {
+    try {
+      const results = await Todo.find();
+      res.status(201).json(results);
+    } catch (error) {
+      res.status(404).json(error);
+    }
   });
-  newTodo.save();
-});
-module.exports = router;
+
+  app.post("/api/todo", (req, res) => {
+    const newTodo = new Todo({
+      todo: req.body.todo,
+    });
+    newTodo.save();
+    res.json(newTodo);
+  });
+};
+module.exports = { todoListApi };
