@@ -1,9 +1,17 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addTodos } from "../redux/actions/todos";
 
 function Form() {
   const [todoList, setTodoList] = useState("");
+  const dispatch = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (todoList) {
+      dispatch(addTodos(todoList));
+      setTodoList("");
+    }
   };
   return (
     <div>
