@@ -12,12 +12,18 @@ const todoListApi = (app) => {
     }
   });
 
-  app.post("/api/todo", (req, res) => {
-    const newTodo = new Todo({
-      todo: req.body.todo,
-    });
-    newTodo.save();
-    res.json(newTodo);
+  app.post("/api/todo", async (req, res) => {
+    const { todo } = req.body;
+
+    try {
+      const newTodo = new Todo({
+        todo: todo,
+      });
+      newTodo.save();
+      res.json(newTodo);
+    } catch (error) {
+      res.status(404).json(error);
+    }
   });
 };
 module.exports = { todoListApi };
