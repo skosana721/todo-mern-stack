@@ -1,6 +1,6 @@
 import "./App.css";
 import Form from "./component/Form";
-import Get from "./Get";
+import GetTodos from "./component/GetTodo";
 
 function App() {
   return (
@@ -9,6 +9,7 @@ function App() {
         <h2>Todo list</h2>
       </header>
       <Form />
+      <GetTodos />
     </div>
   );
 }
