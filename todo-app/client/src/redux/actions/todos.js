@@ -1,5 +1,11 @@
 import axios from "axios";
-import { ADD_TODOS, DELETE_TODOS, GET_TODOS } from "../actionTypes/todos";
+import {
+  ADD_TODOS,
+  CLOSE_MODAL,
+  DELETE_TODOS,
+  GET_TODOS,
+  OPEN_MODAL,
+} from "../actionTypes/todos";
 
 export const getTodos = () => {
   return (dispatch) => {
@@ -30,6 +36,20 @@ export const deleteTodos = (id) => {
         type: DELETE_TODOS,
         payload: id,
       });
+    });
+  };
+};
+export const openModal = () => {
+  return (dispatch) => {
+    dispatch({
+      type: OPEN_MODAL,
+    });
+  };
+};
+export const closeModal = () => {
+  return (dispatch) => {
+    dispatch({
+      type: CLOSE_MODAL,
     });
   };
 };
