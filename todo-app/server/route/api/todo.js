@@ -25,5 +25,14 @@ const todoListApi = (app) => {
       res.status(404).json(error);
     }
   });
+  app.delete("/api/todo/:id", async (req, res) => {
+    const todo = Todo.findById(req.params.id);
+    try {
+      const deletedTodo = await todo.deleteOne();
+      res.status(201).json(deletedTodo);
+    } catch (error) {
+      res.status(404).json(error);
+    }
+  });
 };
 module.exports = { todoListApi };
