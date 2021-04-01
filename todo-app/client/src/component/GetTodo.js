@@ -11,16 +11,16 @@ function GetTodos() {
   }, [dispatch]);
 
   return (
-    <ul>
+    <ul className="todos">
       {todos &&
         todos.map((todo) => {
           return (
-            <li key={todo._id}>
-              <h3>{todo.todo}</h3>
+            <li key={todo._id} className="todo">
               <i
                 className="fas fa-trash"
                 onClick={() => dispatch(deleteTodos(todo._id))}
               ></i>
+              <h3>{todo.todo}</h3>
             </li>
           );
         })}

@@ -1,7 +1,12 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+.container {
+  margin-top: 3rem;
+}
 .App-header {
   background-color: #282c34;
   min-height: 10vh;
@@ -11,4 +16,56 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+.todo-list {
+  min-height: 500px;
+  margin-top: 3rem;
+  padding: 1.5rem;
+  width: 45%;
+  background-color: gray;
+  border-radius: 0.4rem;
+  margin: auto;
+}
+form input {
+  padding: 0.5rem 1rem;
+  margin-right: 0.7rem;
+}
+form button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.3rem;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+}
+.todos {
+  list-style: none;
+  margin: 1.5rem 0;
+}
+.todo {
+  margin: 1rem 0;
+}
+.todo h3 {
+  display: inline-block;
+  margin-left: 1rem;
+
+  text-transform: capitalize;
+}
+.modal {
+  position: relative;
+  padding: 2rem;
+  text-align: center;
+  min-width: 300px;
+  max-width: 550px;
+  background-color: blue;
+  border-radius: 0.3rem;
+  min-height: 200px;
+  margin: auto;
+}
+i {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0.4rem;
+  font-size: 1.5rem;
 }
