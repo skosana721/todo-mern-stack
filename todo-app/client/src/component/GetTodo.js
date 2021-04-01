@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getTodos } from "../redux/actions/todos";
+import { deleteTodos, getTodos } from "../redux/actions/todos";
 
 function GetTodos() {
   const dispatch = useDispatch();
@@ -16,6 +16,10 @@ function GetTodos() {
           return (
             <div key={todo._id}>
               <h3>{todo.todo}</h3>
+              <i
+                className="fas fa-trash"
+                onClick={() => dispatch(deleteTodos(todo._id))}
+              ></i>
             </div>
           );
         })}
