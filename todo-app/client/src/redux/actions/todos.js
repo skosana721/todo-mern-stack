@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ADD_TODOS, GET_TODOS } from "../actionTypes/todos";
+import { ADD_TODOS, DELETE_TODOS, GET_TODOS } from "../actionTypes/todos";
 
 export const getTodos = () => {
   return (dispatch) => {
@@ -21,5 +21,15 @@ export const addTodos = (todo) => {
         payload: res.data,
       })
     );
+  };
+};
+export const deleteTodos = (id) => {
+  return (dispatch) => {
+    axios.delete("http://localhost:4000/api/todo").then((res) => {
+      dispatch({
+        type: DELETE_TODOS,
+        payload: id,
+      });
+    });
   };
 };
