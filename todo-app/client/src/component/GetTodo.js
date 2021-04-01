@@ -9,21 +9,22 @@ function GetTodos() {
   useEffect(() => {
     dispatch(getTodos());
   }, [dispatch]);
+
   return (
-    <div>
+    <ul>
       {todos &&
         todos.map((todo) => {
           return (
-            <div key={todo._id}>
+            <li key={todo._id}>
               <h3>{todo.todo}</h3>
               <i
                 className="fas fa-trash"
                 onClick={() => dispatch(deleteTodos(todo._id))}
               ></i>
-            </div>
+            </li>
           );
         })}
-    </div>
+    </ul>
   );
 }
 
