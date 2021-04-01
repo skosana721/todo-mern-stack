@@ -25,7 +25,7 @@ export const addTodos = (todo) => {
 };
 export const deleteTodos = (id) => {
   return (dispatch) => {
-    axios.delete("http://localhost:4000/api/todo").then((res) => {
+    axios.delete(`http://localhost:4000/api/todo/${id}`).then((res) => {
       dispatch({
         type: DELETE_TODOS,
         payload: id,
