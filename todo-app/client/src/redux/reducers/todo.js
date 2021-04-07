@@ -9,6 +9,7 @@ import {
 const initialState = {
   todoList: [],
   isModalOpen: false,
+  hideButton: true,
 };
 export const todoReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -28,11 +29,13 @@ export const todoReducer = (state = initialState, action) => {
       return {
         ...state,
         isModalOpen: !state.isModalOpen,
+        hideButton: !state.hideButton,
       };
     case CLOSE_MODAL:
       return {
         ...state,
         isModalOpen: !state.isModalOpen,
+        hideButton: !state.hideButton,
       };
     default:
       return state;

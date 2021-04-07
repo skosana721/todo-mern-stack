@@ -7,7 +7,10 @@ function FormModel() {
   const dispatch = useDispatch();
   return (
     <div className="modal">
-      <i class="far fa-times-circle" onClick={() => dispatch(closeModal())}></i>
+      <i
+        className="far fa-times-circle"
+        onClick={() => dispatch(closeModal())}
+      ></i>
       <Form />
     </div>
   );
