@@ -42,6 +42,7 @@ form button {
 }
 .todos {
   list-style: none;
+  position: relative;
   margin: 1.5rem 0;
 }
 .todo {
@@ -83,4 +84,8 @@ form button {
   font-family: monospace;
   border-radius: 0.5rem;
   font-weight: bold;
+}
+.edit-icon {
+  position: absolute;
+  right: 8rem;
 }
