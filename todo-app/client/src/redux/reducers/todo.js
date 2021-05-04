@@ -2,6 +2,7 @@ import {
   ADD_TODOS,
   CLOSE_MODAL,
   DELETE_TODOS,
+  EDIT_TODOS,
   GET_TODOS,
   OPEN_MODAL,
 } from "../actionTypes/todos";
@@ -24,6 +25,10 @@ export const todoReducer = (state = initialState, action) => {
       return {
         ...state,
         todoList: state.todoList.filter((todo) => todo._id !== action.payload),
+      };
+    case EDIT_TODOS:
+      return {
+        ...state,
       };
     case OPEN_MODAL:
       return {
