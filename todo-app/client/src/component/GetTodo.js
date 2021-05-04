@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteTodos, getTodos } from "../redux/actions/todos";
+import EditForm from "./EditForm";
 
 function GetTodos() {
   const dispatch = useDispatch();
@@ -21,6 +22,7 @@ function GetTodos() {
                 onClick={() => dispatch(deleteTodos(todo._id))}
               ></i>
               <h3>{todo.todo}</h3>
+              <EditForm {...todo} />
               <i className="fas fa-edit edit-icon">Edit</i>
             </li>
           );
