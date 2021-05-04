@@ -21,6 +21,7 @@ function GetTodos() {
                 onClick={() => dispatch(deleteTodos(todo._id))}
               ></i>
               <h3>{todo.todo}</h3>
+              <i className="fas fa-edit edit-icon">Edit</i>
             </li>
           );
         })}
