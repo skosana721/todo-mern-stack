@@ -40,9 +40,11 @@ export const deleteTodos = (id) => {
     });
   };
 };
-export const editTodos = (id) => {
+export const editTodos = (obj) => {
+  const { edit, _id } = obj;
+
   return (dispatch) => {
-    axios.put(`http://localhost:4000/api/todo/${id}`).then((res) => {
+    axios.put(`http://localhost:4000/api/todo/${_id}`, { edit }).then((res) => {
       dispatch({
         type: EDIT_TODOS,
       });
