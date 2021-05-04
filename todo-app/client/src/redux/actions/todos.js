@@ -3,6 +3,7 @@ import {
   ADD_TODOS,
   CLOSE_MODAL,
   DELETE_TODOS,
+  EDIT_TODOS,
   GET_TODOS,
   OPEN_MODAL,
 } from "../actionTypes/todos";
@@ -35,6 +36,15 @@ export const deleteTodos = (id) => {
       dispatch({
         type: DELETE_TODOS,
         payload: id,
+      });
+    });
+  };
+};
+export const editTodos = (id) => {
+  return (dispatch) => {
+    axios.put(`http://localhost:4000/api/todo/${id}`).then((res) => {
+      dispatch({
+        type: EDIT_TODOS,
       });
     });
   };
